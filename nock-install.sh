@@ -27,7 +27,7 @@ else
   git clone https://github.com/zorp-corp/nockchain
 fi
 
-cd nockchain
+cd nockchain/
 
 echo -e "\n🔧 开始编译，请耐心等待（大约 15 分钟）..."
 make install-choo
