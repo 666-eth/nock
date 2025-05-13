@@ -35,9 +35,11 @@ cd ~/nockchain || { echo "失败，目录不存在！"; exit 1; }
 echo -e "\n🔍 成功进入 nockchain 目录：$(pwd)"
 
 echo -e "\n🔧 开始编译，请耐心等待（大约 15 分钟）..."
-make install-choo
+# Skip the 'install-choo' step
+# make install-choo  # Comment this out or delete it
 make build-hoon-all
 make build
+
 
 echo -e "\n✅ 编译完成！正在配置环境变量..."
 echo 'export PATH="$PATH:/root/nockchain/target/release"' >> ~/.bashrc
