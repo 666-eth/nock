@@ -14,6 +14,8 @@ rustup default stable
 
 echo -e "\n📁 检查 nockchain 仓库..."
 
+echo -e "\n📁 检查 nockchain 仓库..."
+
 if [ -d "nockchain" ]; then
   echo "⚠️ 检测到已有 nockchain 目录，是否删除并重新拉取？(y/n)"
   read -r confirm
@@ -27,7 +29,10 @@ else
   git clone https://github.com/zorp-corp/nockchain
 fi
 
-cd ~/nockchain
+# 确保成功进入目录
+echo -e "\n🔍 当前目录：$(pwd)"
+cd ~/nockchain || { echo "失败，目录不存在！"; exit 1; }
+echo -e "\n🔍 成功进入 nockchain 目录：$(pwd)"
 
 echo -e "\n🔧 开始编译，请耐心等待（大约 15 分钟）..."
 make install-choo
